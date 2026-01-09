@@ -1,0 +1,17 @@
+{
+	"name": "chrome-no-ai-google-search",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc && cp manifest.json dist/ && cp src/helper-redirect.html dist/",
+		"build:watch": "tsc --watch"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/chrome": "^0.1.32",
+		"typescript": "^5.9.3"
+	}
+}
