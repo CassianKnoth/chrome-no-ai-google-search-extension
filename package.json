@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build": "tsc && cp manifest.json dist/ && cp src/helper-redirect.html dist/",
+		"build": "rm -rf dist && tsc && cp manifest.json dist/ && cp src/helper-redirect.html dist/",
 		"build:watch": "tsc --watch"
 	},
 	"keywords": [],

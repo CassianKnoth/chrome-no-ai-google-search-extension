@@ -5,17 +5,12 @@
 	"description": "Appends '-AI' to Google search queries",
 	"permissions": [
 		"declarativeNetRequest",
-		"declarativeNetRequestWithHostAccess"
+		"declarativeNetRequestWithHostAccess",
+		"scripting"
 	],
 	"host_permissions": ["https://www.google.com/search*"],
 	"background": {
 		"service_worker": "service-worker.js",
 		"type": "module"
-	},
-	"web_accessible_resources": [
-		{
-			"resources": ["helper-redirect.html", "redirect.js"],
-			"matches": ["https://www.google.com/*"]
-		}
-	]
+	}
 }

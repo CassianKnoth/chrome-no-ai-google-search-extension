@@ -1,24 +1,28 @@
-chrome.runtime.onInstalled.addListener(async () => {
-	await chrome.declarativeNetRequest.updateDynamicRules({
-		removeRuleIds: [1],
-		addRules: [
-			{
-				id: 1,
-				priority: 1,
-				action: {
-					type: 'redirect',
-					redirect: {
-						regexSubstitution:
-							'chrome-extension://' +
-							chrome.runtime.id +
-							'/helper-redirect.html?\\1',
-					},
-				},
-				condition: {
-					regexFilter: '^https://www\\.google\\.com/search\\?(.*)',
-					resourceTypes: ['main_frame'],
-				},
-			},
-		],
-	});
-});
+chrome.webRequest.onBeforeRequest.addListener(
+	(details) => {
+		const url = new URL(details.url);
+		const markerParameter = 'noAiExecuted';
+
+		const q = url.searchParams.get('q');
+		if (!q || url.searchParams.get(markerParameter) === '1') {
+			return {};
+		}
+
+		const noAiAppendixRegex = /\+-ai$/i;
+
+		const hasNoAiAppendix = !noAiAppendixRegex.test(q);
+
+		if (hasNoAiAppendix) {
+			url.searchParams.set('q', q + ' -AI');
+		}
+
+		url.searchParams.set(markerParameter, '1');
+
+		return { redirectUrl: url.toString() };
+	},
+	{
+		urls: ['https://www.google.com/search*'],
+		types: ['main_frame'],
+	},
+	['blocking']
+);
