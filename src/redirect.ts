@@ -1,7 +1,9 @@
 const params = new URLSearchParams(location.search);
 const q = params.get('q');
 
-if (params.get('noAiExecuted') === '1') {
+export const noAiParamLabel = 'noAiExecuted';
+
+if (params.get('noAiParamLabel') === '1') {
 	location.replace('https://www.google.com/search?' + params.toString());
 } else {
 	if (q) {

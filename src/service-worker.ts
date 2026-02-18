@@ -1,3 +1,5 @@
+import { noAiParamLabel } from './redirect';
+
 chrome.runtime.onInstalled.addListener(async () => {
 	await chrome.declarativeNetRequest.updateDynamicRules({
 		removeRuleIds: [1],
@@ -15,7 +17,8 @@ chrome.runtime.onInstalled.addListener(async () => {
 					},
 				},
 				condition: {
-					regexFilter: '^https://www\\.google\\.com/search\\?(.*)',
+					// regexFilter: '^https://www\\.google\\.com/search\\?(.*)',
+					regexFilter: `^https?://[^/]*google\\.[^/]+/search\\?.*&${noAiParamLabel}=true.*`,
 					resourceTypes: ['main_frame'],
 				},
 			},
