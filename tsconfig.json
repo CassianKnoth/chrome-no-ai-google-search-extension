@@ -4,7 +4,7 @@
 		"module": "ES2020",
 		"lib": ["ES2020", "DOM"],
 		"strict": true,
-		"outDir": "dist",
+		"outDir": "chrome-no-ai-google-search-extension",
 		"rootDir": "src",
 		"moduleResolution": "bundler",
 		"types": ["chrome"],
