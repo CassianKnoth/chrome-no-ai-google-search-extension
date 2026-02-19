@@ -3,12 +3,16 @@
 	"name": "No Ai Google Search",
 	"version": "1.0.0",
 	"description": "Appends '-AI' to Google search queries",
+	"permissions": ["tabs"],
 	"host_permissions": ["https://www.google.com/*"],
 	"content_scripts": [
 		{
-			"matches": ["https://www.google.com/search*"],
+			"matches": ["https://www.google.com/*"],
 			"js": ["content.js"],
 			"run_at": "document_start"
 		}
-	]
+	],
+	"background": {
+		"service_worker": "background.js"
+	}
 }
