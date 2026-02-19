@@ -3,19 +3,12 @@
 	"name": "No Ai Google Search",
 	"version": "1.0.0",
 	"description": "Appends '-AI' to Google search queries",
-	"permissions": [
-		"declarativeNetRequest",
-		"declarativeNetRequestWithHostAccess"
-	],
-	"host_permissions": ["https://www.google.com/search*"],
-	"background": {
-		"service_worker": "service-worker.js",
-		"type": "module"
-	},
-	"web_accessible_resources": [
+	"host_permissions": ["https://www.google.com/*"],
+	"content_scripts": [
 		{
-			"resources": ["helper-redirect.html", "redirect.js"],
-			"matches": ["https://www.google.com/*"]
+			"matches": ["https://www.google.com/search*"],
+			"js": ["content.js"],
+			"run_at": "document_start"
 		}
 	]
 }
