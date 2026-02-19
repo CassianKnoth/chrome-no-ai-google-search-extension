@@ -1,10 +1,10 @@
 {
-	"name": "chrome-no-ai-google-search",
+	"name": "chrome-no-ai-google-search-extension",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build": "rm -rf dist/ && tsc && cp manifest.json dist/",
+		"build": "rm -rf chrome-no-ai-google-search-extension/ && tsc && cp manifest.json chrome-no-ai-google-search-extension/",
 		"build:watch": "tsc --watch"
 	},
 	"keywords": [],

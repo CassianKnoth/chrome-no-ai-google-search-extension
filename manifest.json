@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
-	"name": "No Ai Google Search",
+	"name": "chrome-no-ai-google-search-extension",
 	"version": "1.0.0",
-	"description": "Appends '-AI' to Google search queries",
+	"description": "Appends '-ai' to Google search queries",
 	"permissions": ["tabs"],
 	"host_permissions": ["https://www.google.com/*"],
 	"content_scripts": [
