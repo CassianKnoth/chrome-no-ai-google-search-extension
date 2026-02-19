@@ -34,6 +34,8 @@ However, if you start your search with the Google input element, where " -ai" is
 
 This extension is _not_ available in the Chrome Web Store, you need to download the `chrome-no-ai-google-search-extension` folder from this repo, unpack it and load it yourself:
 
+> 💡 Instead of downloading the whole repo you can go to Github's web editor (change `github.com` to `github.dev` in the repo's url or hit the preiod key) where you can right click the specific folder you want to download.
+
 - In chrome, navigate to `chrome://extensions/`
 - Activate `Developer mode` (last I checked top right corner)
 - Click the `Load unpacked` button (last I checked top left corner)
